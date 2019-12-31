@@ -1,5 +1,8 @@
-# exclude all
-
+# ignore node_modules folder
 node_modules
+# ignore mac useless file
 .DS_Store
+# ignore project folder not created by vscode
 .idea/
+# ignore anything that generated
+dist

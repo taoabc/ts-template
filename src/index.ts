@@ -1,6 +1,22 @@
 import at from './at';
 
-function makeRemindText(realName: string, mobiles: string[], preferAt = false) {
+interface MDReturn {
+  msgtype: string;
+  markdown: {
+    title: string;
+    text: string;
+  };
+  at: {
+    atMobiles: string[];
+    isAtAll: boolean;
+  };
+}
+
+function makeRemindText(
+  realName: string,
+  mobiles: string[],
+  preferAt = false
+): string {
   if (preferAt && mobiles.length > 0) {
     let str = '';
     mobiles.forEach(m => {
@@ -12,7 +28,7 @@ function makeRemindText(realName: string, mobiles: string[], preferAt = false) {
   }
 }
 
-function generateBuildEvent(data: any) {
+function generateBuildEvent(data: object): MDReturn {
   let status;
   if (data.build_status === 'failed') {
     status = '失败';
@@ -46,7 +62,7 @@ function generateBuildEvent(data: any) {
   };
 }
 
-function generateMergeRequestOpenEvent(data: any) {
+function generateMergeRequestOpenEvent(data: object): MDReturn {
   const userName = data.assignee.username;
   const mobile = at.getMobile(userName, null);
   const mobiles = mobile ? [mobile] : [];
@@ -70,7 +86,7 @@ function generateMergeRequestOpenEvent(data: any) {
   };
 }
 
-function generateMergeRequestClosedEvent(data: any) {
+function generateMergeRequestClosedEvent(data: object): MDReturn {
   const atName = data.object_attributes.last_commit.author.name;
   const atEmail = data.object_attributes.last_commit.author.email;
   const mobile = at.getMobile(atName, atEmail);
@@ -95,7 +111,7 @@ function generateMergeRequestClosedEvent(data: any) {
   };
 }
 
-function generatePipelineEvent(data: any) {
+function generatePipelineEvent(data: object): MDReturn {
   const success = data.object_attributes.status === 'success';
   const status = success ? '成功' : '失败';
   const authorName = data.commit.author.name;

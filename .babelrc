@@ -1,12 +1,14 @@
 {
   "presets": [
-    ["@babel/preset-env", {
-      "modules": false,
-      "targets": {
-        "electron": "6.0.9"
+    [
+      "@babel/preset-env",
+      {
+        "modules": false,
+        "targets": {
+          "electron": "7.0.0"
+        }
       }
-    }],
+    ],
     "@babel/preset-react"
-  ],
-  "plugins": ["@babel/plugin-proposal-class-properties"]
+  ]
 }
