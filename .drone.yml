@@ -11,4 +11,5 @@ steps:
       - node -v
       - npm -v
       - npm ci
+      - npm run lint
       - npm test
