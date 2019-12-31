@@ -1,0 +1,19 @@
+{
+  "name": "ts-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.100tal.com/peiyou_like_shuangshi_web/ts-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  }
+}

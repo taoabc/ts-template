@@ -1,0 +1,9 @@
+/config/
+/dist/**/*
+mockdata.js
+/src/dragons
+/src/render/libs
+/src/render/app/devbar
+/src/main/login/*
+phaser.js
+SpinePlugin.js

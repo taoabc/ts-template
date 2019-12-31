@@ -1,0 +1,14 @@
+kind: pipeline
+name: default
+
+clone:
+  depth: 1
+
+steps:
+  - name: build
+    image: node
+    commands:
+      - node -v
+      - npm -v
+      - npm ci
+      - npm test
