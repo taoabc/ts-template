@@ -12,3 +12,5 @@
 4. ts-jest
 5. babel
 6. prettier
+   1. 配置使用单引号`singleQuote: true`
+7. drone
